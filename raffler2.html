@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Raffler</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Raffler</h1>
+  <div id="container"></div>
+  <script type="text/template" id="item-template">
+      <input type="text" id="new_entry"/>
+      <button id="new">Add</button>
+      <button id="draw">Draw Winner</button>
+      <% _.each(entries, function(entry){ %>
+            <li id='<%- entry.id %>'><%- entry.name %>
+            <span class="winner"><% if (entry.winner) { %><b>WINNER</b><% } %></span></li>
+      <% }); %>
+      <button id="clear" click="clearWinner()">clear Winners</button>
+  </script>  
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js" type="text/javascript"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js" type="text/javascript"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.0/backbone.localStorage-min.js" type="text/javascript"></script> 
+    <script src="src/raffler2.js"></script>
+</body>
+</html>
